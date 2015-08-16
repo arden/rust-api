@@ -19,7 +19,6 @@ doctest = false
 path = "src/main.rs"
 
 [dependencies]
-nickel = "*"
 time = "*"
 uuid = "*"
 log = "*"
@@ -32,8 +31,12 @@ rustc-serialize = "*"
 mysql = "*"
 default-features = false
 
+[dependencies.nickel]
+git = "https://github.com/arden/nickel.rs"
+
 [dependencies.jsonway]
 git = "https://github.com/rustless/jsonway"
 
 [dependencies.nickel_mysql]
-git = "https://github.com/zither/nickel-mysql.git"
+git = "https://github.com/arden/nickel-mysql.git"
+
