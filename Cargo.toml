@@ -1,0 +1,39 @@
+[package]
+name = "tujiao-api"
+version = "0.1.0"
+authors = ["arden <arden@tujiao.com>"]
+description = "the tujiao api"
+repository = ""
+readme = "README.md"
+keywords = ["tujiao"]
+
+[lib]
+name = "tujiaoapi"
+path = "src/lib.rs"
+
+[[bin]]
+name = "tujiao-api"
+test = false
+bench = false
+doctest = false
+path = "src/main.rs"
+
+[dependencies]
+nickel = "*"
+time = "*"
+uuid = "*"
+log = "*"
+chrono = "*"
+plugin = "*"
+typemap = "*"
+rustc-serialize = "*"
+
+[dependencies.mysql]
+mysql = "*"
+default-features = false
+
+[dependencies.jsonway]
+git = "https://github.com/rustless/jsonway"
+
+[dependencies.nickel_mysql]
+git = "https://github.com/zither/nickel-mysql.git"
