@@ -5,6 +5,7 @@ extern crate jsonway;
 extern crate mysql;
 extern crate nickel_mysql;
 
+use std::path::Path;
 use nickel::{Nickel, HttpRouter, MediaType};
 use nickel_mysql::{MysqlMiddleware, MysqlRequestExtensions};
 
@@ -42,5 +43,10 @@ fn main() {
 
     });
 
-    app.listen("localhost:6767");
+    //app.listen("0.0.0.0:6767");
+
+    let cert_path = Path::new("/Users/arden/data/repository/trunk/tj/server/tujiao-api/ssl/certificate.pem");
+    let key_path = Path::new("/Users/arden/data/repository/trunk/tj/server/tujiao-api/ssl/privatekey.pem");
+    app.listen_https("0.0.0.0:6767", cert_path, key_path);
 }
+
